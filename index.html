@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Gap between two Dates Calculator</title>
+    <style>
+     
+        body{
+            background: url(SmartDateCalendarKit.png);
+           margin: 10px;
+           padding: 10px;
+           font-family: Arial, Helvetica, sans-serif;
+           background-color: ;
+
+           letter-spacing:1px;
+         
+        }
+       #output{
+       color:black;
+       height: auto;
+       width: auto;
+       padding: 5px;
+       border: 2px solid black;
+       }
+           #d1,#d2{
+               width: 150px;
+               height: 150px;
+               padding: 10px;
+               text-transform: uppercase;
+               border: none;
+               border-bottom: 8px gray solid;
+               border-radius: 35rem;
+               outline: none;
+               background:linear-gradient(to right,white,blue);
+               font-weight: 900;
+               box-shadow: 2px 1px 3px 1px gray;
+              
+           }
+           p{
+               font-weight:900 ;
+               font-size: 22px;
+           }
+           h3{
+            color: blue;
+            text-decoration: overline;
+           }
+           code{
+          color: black;
+           }
+
+           #developer{
+            background-color: olivedrab;
+            text-align: center;
+            padding: 10px;
+            border-radius: 35px;
+            letter-spacing: 1px;
+           }
+       </style>
+</head>
+<body>
+    <h3>Gap between two Dates Calculator</h3>
+   
+    <center>
+    <p>  
+    <input type="text" id="d1" placeholder="Starting Date" onchange="calculateDays()" onfocus="(this.type='date')">
+    </p>
+    <p> 
+
+    <input type="text" placeholder="Ending Date" id="d2" onchange="calculateDays()" onfocus="(this.type='date')">
+    </p>
+    </center>
+    <hr>
+    <code>
+    
+    <p>Gap or Difference between :-</p>
+    <p id="sd">Starting Date:</p>
+    and
+    <p id="ed">Ending Date:</p>
+    are 
+    <p id="outputs"><span id="output">###</span> Days</p>
+    </code>
+
+    <div id="developer">
+
+        <h2>DEVELOPER</h2>
+        <h4>RAJNISH KUMAR</h4>
+            FRONTEND-DEVELOPER <hr>
+            B.TECH (Computer Science & Engg.) <hr>
+            MAIL(1): rockstarrajnish4658@gmail.com <hr>
+            MAIL(2): webdeveloper9570@gmail.com <hr>
+            PHONE: 9570986396; WHATSAPP: 9065407531 <hr>
+         </div>
+
+    <script>
+    function calculateDays(){
+    var d1= document.querySelector("#d1").value; 
+    var d2= document.querySelector("#d2").value;
+    const dateOne = new Date(d1);
+    const dateTwo = new Date(d2);
+    const time = Math.abs (dateTwo - dateOne);
+    const days = Math.ceil(time / (1000 * 60 * 60 * 24));
+    document.getElementById("output").innerText= days ;
+    document.getElementById("sd").innerText="Starts on - " + d1;
+    document.getElementById("ed").innerText="Ends on - " + d2;
+    }
+    </script>
+    </body>
+</body>
+</html>
